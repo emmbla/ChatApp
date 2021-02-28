@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <aside class="aside">
+    <div class="open-rooms">
+        <h2>Open Rooms</h2>
+        <ul id="openRooms">
+            <!-- Open Rooms -->
+        </ul>
+    </div>
+    <div class="locked-rooms">
+        <h2>Locked Rooms</h2>
+        <ul id="lockedRooms">
+            <!-- Locked Rooms -->
+        </ul>
+    </div>
+</aside>    
+<div class="welcome-screen">
+  <h1>Welcome</h1>
+  <div class="welcome-info">
+    <h3>Create your username and click next</h3>
+    <form class="username">
+      <input id="name" type="text" placeholder="Enter your username">
+      <button>Next</button>
+  </form>
+  </div>
+</div>
+
+
+<div class="join-room hidden">
+  <div class="welcome-create-room">
+      <!-- Welcome -->
+  </div>
+  <form class="create-room">
+  <input id="room" type="text" placeholder="Enter a room">
+  <label for="checkbox">Use password?</label>
+  <input type="checkbox" name="checkbox" id="checkbox" onclick="usePassword()">
+  <input id="password" class="password hidden" type="password" placeholder="enter the password">
+      <button>Go in Room</button>
+  </form>
+</div>
+
+
+<div class="chat-room hidden">
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+  </div>
+</body>
+</html>
